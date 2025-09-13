@@ -69,7 +69,12 @@ async def help_cmd(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
 async def faq_cmd(update: Update, context: ContextTypes.DEFAULT_TYPE):
     await update.message.reply_text(
-        "❓ <b>Preguntas frecuentes</b>
+        "❓ <b>Preguntas frecuentes</b>\n\nSelecciona una categoría:",
+        reply_markup=kb_faq_menu(),
+        disable_web_page_preview=True,
+        parse_mode=ParseMode.HTML
+    )
+
 
 Selecciona una categoría:",
         reply_markup=kb_faq_menu(),
