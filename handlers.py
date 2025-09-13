@@ -65,8 +65,8 @@ def texto_bienvenida(nombre: str) -> str:
         "📣 <b>En el canal</b> podrás estar al tanto de:\n"
         "— Nuevos lanzamientos\n— Descuentos especiales\n— Sorteos mensuales\n— Y más\n\n"
         "💬 <b>En el chat</b> puedes resolver dudas y participar en una comunidad respetuosa (+18, sin spam).\n\n"
-        "Recuerda que con tu compra ya estás a medio camino para participar ewn nuestro sorteo mensual🤝.\n"
-        "Revisa los premios y acccede al formulario en 'Bases del Sorteo' 👇"
+        "Recuerda que con tu compra ya estás a medio camino para participar en nuestro sorteo mensual🤝.\n"
+        "Revisa los premios mensuales y aprende a concursar en 'Bases del Sorteo' 👇"
     )
 
 # =========================
@@ -118,7 +118,7 @@ async def faq_router(update: Update, context: ContextTypes.DEFAULT_TYPE):
     if data == "faq_envios":
         texto = (
             "✈️ <b>Envíos</b>\n\n"
-            "Envíos a todo Chile por courier. Despacho en máximo 48 h hábiles.\n"
+            "Envíos a todo Chile por courier. Despacho en máximo 48 hrs hábiles.\n"
             "Al enviar, te llegará el tracking por correo.\n\n"
             f"📩 ¿No recibiste el tracking? Escríbenos por WhatsApp: {WHATSAPP_TXT}"
         )
@@ -128,10 +128,9 @@ async def faq_router(update: Update, context: ContextTypes.DEFAULT_TYPE):
     if data == "faq_garantias":
         texto = (
             "🛠️ <b>Garantías</b>\n\n"
-            "Cada artículo tiene garantía original del fabricante (ver descripción del producto).\n\n"
-            "No cubre daños por mal uso. Para evaluación, completa el formulario y espera respuesta (≤ 48 h hábiles):\n"
+            "Cada artículo tiene garantía de 6 meses en Chile y una garantia internacional dependiendo del fabricante).\n\n"
+            "No se cubren daños por mal uso. Para evaluación, completa el formulario y espera respuesta (≤ 48 h hábiles):\n"
             f"🔗 <a href=\"{FORM_URL}\">Formulario de garantía</a>\n\n"
-            "📬 Soporte: <a href=\"mailto:soporte@mundovapo.cl\">soporte@mundovapo.cl</a> o WhatsApp."
         )
         await safe_edit(cq, texto, kb_faq_menu())
         return
@@ -139,7 +138,7 @@ async def faq_router(update: Update, context: ContextTypes.DEFAULT_TYPE):
     if data == "faq_mantencion":
         texto = (
             "🧴 <b>Mantención</b>\n\n"
-            "Si no sabes cómo mantener tu vaporizador, te aconsejamos revisar las guías del siguiente enlace:\n"
+            "Si no sabes cómo mantener tu vaporizador, te aconsejamos revisar nuestras guías básicas en el siguiente enlace:\n"
             f"🔗 <a href=\"{MANTENCION_URL}\">Guías de mantención</a>"
         )
         await safe_edit(cq, texto, kb_faq_menu())
