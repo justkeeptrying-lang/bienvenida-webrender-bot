@@ -40,30 +40,17 @@ async def safe_edit(cq, text, markup):
 
 def texto_bienvenida(nombre):
     return (
-        f"👋 ¡Bienvenid@, {nombre}!
-
-"
-        "Nos alegra mucho tenerte por aquí 🌿
-"
+        f"👋 ¡Bienvenid@, {nombre}!\n\n"
+        "Nos alegra mucho tenerte por aquí 🌿\n"
         "En plataformas como Instagram es muy difícil mantener una cuenta dedicada a vaporizadores, "
-        "por eso decidimos crear esta comunidad exclusiva para quienes confían en nosotros 💚
-
-"
-        "📣 <b>En el canal</b> podrás estar al tanto de:
-"
-        "— Nuevos lanzamientos
-— Descuentos especiales
-— Sorteos mensuales
-— Y más
-
-"
-        "💬 <b>En el chat</b> puedes resolver dudas y participar en una comunidad respetuosa (+18, sin spam).
-
-"
-        "Gracias por tu compra 🤝 Ya estás participando en el sorteo mensual.
-"
+        "por eso decidimos crear esta comunidad exclusiva para quienes confían en nosotros 💚\n\n"
+        "📣 <b>En el canal</b> podrás estar al tanto de:\n"
+        "— Nuevos lanzamientos\n— Descuentos especiales\n— Sorteos mensuales\n— Y más\n\n"
+        "💬 <b>En el chat</b> puedes resolver dudas y participar en una comunidad respetuosa (+18, sin spam).\n\n"
+        "Gracias por tu compra 🤝 Ya estás participando en el sorteo mensual.\n"
         "Revisa las bases y formulario en el enlace 👇"
     )
+
 
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
     nombre = (update.effective_user.first_name or "amig@") if update.effective_user else "amig@"
