@@ -66,7 +66,7 @@ def texto_bienvenida(nombre: str) -> str:
         "— Nuevos lanzamientos\n— Descuentos especiales\n— Sorteos mensuales\n— Y mucho más\n\n"
         "💬 <b>En el chat</b> podrás resolver dudas y compartir con una comunidad respetuosa (+18, sin spam).\n\n"
         "🤝 Con tus compras ya estás a medio camino para participar en nuestros sorteos mensuales; "
-        "solo necesitas completar el formulario en <b>Bases del Sorteo</b>.\n"
+        "solo necesitas completar el formulario en <b>'Bases del Sorteo'</b>.\n"
     )
 
 
