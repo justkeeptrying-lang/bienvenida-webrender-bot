@@ -60,13 +60,12 @@ def texto_bienvenida(nombre: str) -> str:
     return (
         f"👋 ¡Bienvenid@, {nombre}!\n\n"
         "Nos alegra mucho tenerte por aquí 🌿\n"
-        "En Instagram ha sido muy difícil mantener una cuenta dedicada a vaporizadores, "
-        "por eso decidimos crear esta comunidad exclusiva para quienes confían en nosotros 💚\n\n"
+        "Instagram es muy restrictivo y nos bajan de forma constante nuestras cuentas, "
+        "por eso decidimos crear esta comunidad aquí solo para quienes confían en nosotros 💚\n\n"
         "📣 <b>En el canal</b> podrás estar al tanto de:\n"
         "— Nuevos lanzamientos\n— Descuentos especiales\n— Sorteos mensuales\n— Y más\n\n"
         "💬 <b>En el chat</b> puedes resolver dudas y participar en una comunidad respetuosa (+18, sin spam).\n\n"
-        "Recuerda que con tu compra ya estás a medio camino para participar en nuestro sorteo mensual 🤝\n\n"
-        "Revisa los premios mensuales y aprende a concursar en 'Bases del Sorteo' 👇"
+        "Recuerda que con tus compras ya estás a medio camino para participar en nuestros sorteos mensuales 🤝\n\n"
     )
 
 # =========================
