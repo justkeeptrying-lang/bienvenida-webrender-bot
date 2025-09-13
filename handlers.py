@@ -25,7 +25,7 @@ def kb_principal():
     return InlineKeyboardMarkup([
         [InlineKeyboardButton("📣 Canal", url=CHANNEL_URL),
          InlineKeyboardButton("💬 Chat",  url=GROUP_URL)],
-        [InlineKeyboardButton("📋 Bases del sorteo", url=SORTEO_URL)],
+        [InlineKeyboardButton("📋 Bases Sorteos", url=SORTEO_URL)],
         [InlineKeyboardButton("❓ Preguntas frecuentes", callback_data="faq_menu")],
         [InlineKeyboardButton("🟢📱 Atención por WhatsApp", url=WHATSAPP_URL)]
     ])
