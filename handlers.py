@@ -4,15 +4,23 @@ from telegram.constants import ParseMode
 from telegram.error import BadRequest
 from telegram.ext import ContextTypes
 
-# ===== ENV / URLs =====
+# =========================
+# 🔗 ENLACES CONFIGURABLES
+# =========================
 CHANNEL_URL  = os.getenv("CHANNEL_URL",  "https://t.me/+jS_YKiiHgcw3OTRh")
 GROUP_URL    = os.getenv("GROUP_URL",    "https://t.me/+kL7eSPE27805ZGRh")
 SORTEO_URL   = os.getenv("SORTEO_URL",   "https://www.mundovapo.cl")
 FORM_URL     = os.getenv("FORM_URL",     "https://docs.google.com/forms/d/e/1FAIpQLSct9QIex5u95sdnaJdXDC4LeB-WBlcdhE7GXoUVh3YvTh_MlQ/viewform")
 WHATSAPP_TXT = os.getenv("WHATSAPP_TXT", "+56 9 9324 5860")
-WHATSAPP_URL = os.getenv("WHATSAPP_URL", "https://www.mundovapo.cl")  # cámbialo luego a wa.me
+WHATSAPP_URL = os.getenv("WHATSAPP_URL", "https://www.mundovapo.cl")
 
-# ===== TECLADOS =====
+# Nuevos enlaces configurables (puedes cambiarlos fácilmente aquí)
+MANTENCION_URL = os.getenv("MANTENCION_URL", "https://mundovapo.cl")
+GUIAS_URL      = os.getenv("GUIAS_URL",      "https://mundovapo.cl")
+
+# =========================
+# 🧩 TECLADOS
+# =========================
 def kb_principal():
     return InlineKeyboardMarkup([
         [InlineKeyboardButton("📣 Canal", url=CHANNEL_URL),
@@ -26,12 +34,15 @@ def kb_faq_menu():
     return InlineKeyboardMarkup([
         [InlineKeyboardButton("🚚 Envíos", callback_data="faq_envios")],
         [InlineKeyboardButton("🛠️ Garantías", callback_data="faq_garantias")],
+        [InlineKeyboardButton("🧴 Mantención", callback_data="faq_mantencion")],
+        [InlineKeyboardButton("📘 Guías y blogs", callback_data="faq_guias")],
         [InlineKeyboardButton("⬅️ Volver al inicio", callback_data="faq_home")]
     ])
 
-# ===== UTIL =====
+# =========================
+# ⚙️ FUNCIONES ÚTILES
+# =========================
 async def safe_edit(cq, text, markup):
-    """Edita el mensaje de callback; ignora el error si el contenido no cambió."""
     try:
         await cq.edit_message_text(
             text,
@@ -58,7 +69,9 @@ def texto_bienvenida(nombre: str) -> str:
         "Revisa las bases y formulario en el enlace 👇"
     )
 
-# ===== HANDLERS =====
+# =========================
+# 🤖 HANDLERS
+# =========================
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
     nombre = (update.effective_user.first_name or "amig@") if update.effective_user else "amig@"
     await update.message.reply_text(
@@ -122,3 +135,22 @@ async def faq_router(update: Update, context: ContextTypes.DEFAULT_TYPE):
         )
         await safe_edit(cq, texto, kb_faq_menu())
         return
+
+    if data == "faq_mantencion":
+        texto = (
+            "🧴 <b>Mantención</b>\n\n"
+            "Si no sabes cómo mantener tu vaporizador, te aconsejamos revisar las guías del siguiente enlace:\n"
+            f"🔗 <a href=\"{MANTENCION_URL}\">Guías de mantención</a>"
+        )
+        await safe_edit(cq, texto, kb_faq_menu())
+        return
+
+    if data == "faq_guias":
+        texto = (
+            "📘 <b>Guías y blogs</b>\n\n"
+            "Si necesitas saber más sobre la vaporización en general, no dudes en revisar nuestras guías completas:\n"
+            f"🔗 <a href=\"{GUIAS_URL}\">Blog y guías completas</a>"
+        )
+        await safe_edit(cq, texto, kb_faq_menu())
+        return
+
