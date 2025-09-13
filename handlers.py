@@ -65,7 +65,7 @@ def texto_bienvenida(nombre: str) -> str:
         "📣 <b>En el canal</b> podrás estar al tanto de:\n"
         "— Nuevos lanzamientos\n— Descuentos especiales\n— Sorteos mensuales\n— Y más\n\n"
         "💬 <b>En el chat</b> puedes resolver dudas y participar en una comunidad respetuosa (+18, sin spam).\n\n"
-        "Recuerda que con tu compra ya estás a medio camino para participar en nuestro sorteo mensual🤝.\n"
+        "Recuerda que con tu compra ya estás a medio camino para participar en nuestro sorteo mensual 🤝\n\n"
         "Revisa los premios mensuales y aprende a concursar en 'Bases del Sorteo' 👇"
     )
 
