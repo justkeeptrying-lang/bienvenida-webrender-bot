@@ -129,7 +129,7 @@ async def faq_router(update: Update, context: ContextTypes.DEFAULT_TYPE):
     if data == "faq_garantias":
         texto = (
             "🛠️ <b>Garantías</b>\n\n"
-            "Cada artículo tiene garantía de 6 meses en Chile y una garantia internacional dependiendo del fabricante).\n\n"
+            "Cada artículo tiene garantía de 6 meses en Chile y una garantia internacional dependiendo del fabricante.\n\n"
             "No se cubren daños por mal uso. Para evaluación, completa el formulario y espera respuesta (≤ 48 h hábiles):\n"
             f"🔗 <a href=\"{FORM_URL}\">Formulario de garantía</a>\n\n"
         )
