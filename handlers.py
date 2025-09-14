@@ -12,7 +12,7 @@ GROUP_URL    = os.getenv("GROUP_URL",    "https://t.me/+kL7eSPE27805ZGRh")
 SORTEO_URL   = os.getenv("SORTEO_URL",   "https://mundovapo.cl/content/20-bases-de-sorteo")
 FORM_URL     = os.getenv("FORM_URL",     "https://docs.google.com/forms/d/e/1FAIpQLSct9QIex5u95sdnaJdXDC4LeB-WBlcdhE7GXoUVh3YvTh_MlQ/viewform")
 WHATSAPP_TXT = os.getenv("WHATSAPP_TXT", "+56 9 9324 5860")
-WHATSAPP_URL = os.getenv("WHATSAPP_URL", "https://www.mundovapo.cl")
+WHATSAPP_URL = os.getenv("WHATSAPP_URL", "wa.me/56993245860")
 
 # Nuevos enlaces configurables (puedes cambiarlos fácilmente aquí)
 MANTENCION_URL = os.getenv("MANTENCION_URL", "https://mundovapo.cl/content/18-recomendaciones-de-uso")
