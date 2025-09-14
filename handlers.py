@@ -15,8 +15,8 @@ WHATSAPP_TXT = os.getenv("WHATSAPP_TXT", "+56 9 9324 5860")
 WHATSAPP_URL = os.getenv("WHATSAPP_URL", "https://www.mundovapo.cl")
 
 # Nuevos enlaces configurables (puedes cambiarlos fácilmente aquí)
-MANTENCION_URL = os.getenv("MANTENCION_URL", "https://mundovapo.cl")
-GUIAS_URL      = os.getenv("GUIAS_URL",      "https://mundovapo.cl")
+MANTENCION_URL = os.getenv("MANTENCION_URL", "https://mundovapo.cl/content/18-recomendaciones-de-uso")
+GUIAS_URL      = os.getenv("GUIAS_URL",      "https://mundovapo.cl/content/10-guias")
 
 # =========================
 # 🧩 TECLADOS
@@ -34,7 +34,7 @@ def kb_faq_menu():
     return InlineKeyboardMarkup([
         [InlineKeyboardButton("🚚 Envíos", callback_data="faq_envios")],
         [InlineKeyboardButton("🛠️ Garantías", callback_data="faq_garantias")],
-        [InlineKeyboardButton("🧴 Mantención", callback_data="faq_mantencion")],
+        [InlineKeyboardButton("💨 Recomendaciones de Uso", callback_data="faq_mantencion")],
         [InlineKeyboardButton("📘 Guías y blogs", callback_data="faq_guias")],
         [InlineKeyboardButton("⬅️ Volver al inicio", callback_data="faq_home")]
     ])
@@ -138,8 +138,8 @@ async def faq_router(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
     if data == "faq_mantencion":
         texto = (
-            "🧴 <b>Mantención</b>\n\n"
-            "Si no sabes cómo mantener tu vaporizador, te aconsejamos revisar nuestras guías básicas en el siguiente enlace:\n"
+            "💨 <b>Recomendaciones de Uso</b>\n\n"
+            "Si es tu primera vez, revisa nuestras guías básicas de uso para cada tipo de vaporizador en el siguiente enlace:\n"
             f"🔗 <a href=\"{MANTENCION_URL}\">Guías de mantención</a>"
         )
         await safe_edit(cq, texto, kb_faq_menu())
